@@ -45,7 +45,7 @@ public class HistoryFragment extends Fragment implements OnClickListener{
       ViewGroup container, Bundle savedInstanceState) {
     View root = inflater.inflate(R.layout.fragment_history, container, false);
     historyList = root.findViewById(R.id.history_list);
-    addHistory = root.findViewById(R.id.ADD_HISTORY);
+    addHistory = root.findViewById(R.id.add_history);
     addHistory.setOnClickListener((v) -> editHistory(0));
     return root;
   }
@@ -56,7 +56,7 @@ public class HistoryFragment extends Fragment implements OnClickListener{
     editHistory(history.getId());
   }
   private void editHistory(long id) {
-    RaceEditFragment fragment = RaceEditFragment.newInstance(id);
+    HistoryEditFragment fragment = HistoryEditFragment.newInstance(id);
     fragment.show(getChildFragmentManager(), fragment.getClass().getName());
   }
 }
